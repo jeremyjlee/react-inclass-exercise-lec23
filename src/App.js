@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import Child from './Child';
 
-function App() {
+class Parent extends Component {
+
+  myFunction(value) {
+    console.log(value)
+  }
+
+  render () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Child myFunction={this.myFunction} />
     </div>
-  );
+    )
+  }
 }
 
-export default App;
+export default Parent;
